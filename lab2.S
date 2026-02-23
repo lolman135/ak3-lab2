@@ -30,14 +30,14 @@ calculate:
 	and r3, r0, r1
 
 	// step 2: Logical shift (a & b)>> by one sign
-	lsr r3, r2, #1
+	lsr r3, r3, #1
 
 	// Preparing r4 and r5 for calculating factorial
 	// r4 contains result of calculation, r5 is counter
 	mov r4, #1 // Result
 	mov r5, r2 // Counter
 
-fuctorial:
+factorial:
 	// Check number of iteration
 	cmp r5, #1
 	// If r5 equals 1 or less - jump to factorial_done
@@ -54,7 +54,7 @@ fuctorial:
 	b factorial
 
 	
-fuctorial_done:
+factorial_done:
 	// Writing result to r0
 	add r0, r3, r4 
 	// Restore r4, r5 and return from function
